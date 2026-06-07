@@ -1,0 +1,8 @@
+{
+  "name": "kpant14-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  }
+}

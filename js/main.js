@@ -48,23 +48,27 @@ newsToggle.addEventListener('click', () => {
 const filterBtns = document.querySelectorAll('.pub-filter-btn');
 const pubItems   = document.querySelectorAll('.pub-item');
 
+function applyFilter(filter) {
+  pubItems.forEach(item => {
+    if (filter === 'all' || item.dataset.type === filter) {
+      item.classList.remove('hidden');
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+}
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Update active button
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
-    const filter = btn.dataset.filter;
-
-    pubItems.forEach(item => {
-      if (filter === 'all' || item.dataset.type === filter) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
-    });
+    applyFilter(btn.dataset.filter);
   });
 });
+
+// Apply default filter on load
+const activeBtn = document.querySelector('.pub-filter-btn.active');
+if (activeBtn) applyFilter(activeBtn.dataset.filter);
 
 // ── Active nav link on scroll ─────────────────────────────
 const sections = document.querySelectorAll('section[id]');

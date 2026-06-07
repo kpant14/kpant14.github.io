@@ -61,6 +61,27 @@
   border-color: rgba(207,185,145,.25);
 }
 
+.advisor-name,
+a.advisor-name,
+a.advisor-name:visited {
+  color: #8E6F3E !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+a.advisor-name:hover {
+  color: #6b5230 !important;
+}
+
+[data-theme="dark"] .advisor-name,
+[data-theme="dark"] a.advisor-name,
+[data-theme="dark"] a.advisor-name:visited {
+  color: #DDB945 !important;
+}
+[data-theme="dark"] a.advisor-name:hover {
+  color: #f0cc5a !important;
+}
+
 [data-theme="dark"] .btn-primary {
   color: #111;
 }
@@ -244,7 +265,7 @@ a:hover { color: var(--rust-dark); text-decoration: underline; }
 
 /* ── 4. Hero ──────────────────────────────────────────────── */
 .hero {
-  padding: 5rem 2rem 4rem;
+  padding: 2.5rem 2rem 2rem;
   position: relative;
   overflow: hidden;
   background-image: url('../assets/img/hero.gif');
@@ -273,9 +294,14 @@ a:hover { color: var(--rust-dark); text-decoration: underline; }
   max-width: var(--max-w);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 4rem;
+  grid-template-columns: minmax(300px, 680px) 300px;
+  gap: 3rem;
   align-items: start;
+  justify-content: center;
+}
+
+.hero-text {
+  margin-top: 0;
 }
 
 .hero-label {
@@ -284,16 +310,16 @@ a:hover { color: var(--rust-dark); text-decoration: underline; }
   letter-spacing: .08em;
   color: var(--rust);
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 400;
   line-height: 1.05;
   color: var(--ink);
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
 }
 .hero-name em {
   font-style: italic;
@@ -303,8 +329,8 @@ a:hover { color: var(--rust-dark); text-decoration: underline; }
 .hero-bio {
   max-width: 58ch;
   color: var(--ink-soft);
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
+  margin-bottom: .6rem;
+  font-size: .92rem;
 }
 .hero-bio strong { color: var(--ink-mid); font-weight: 500; }
 
@@ -312,7 +338,7 @@ a:hover { color: var(--rust-dark); text-decoration: underline; }
   display: flex;
   gap: .75rem;
   flex-wrap: wrap;
-  margin: 1.75rem 0 1.25rem;
+  margin: 1rem 0 .75rem;
 }
 
 .hero-social {
@@ -332,7 +358,7 @@ a:hover { color: var(--rust-dark); text-decoration: underline; }
 .hero-photo-wrap { display: flex; flex-direction: column; gap: 1.25rem; }
 
 .hero-photo-frame {
-  width: 380px;
+  width: 400px;
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
